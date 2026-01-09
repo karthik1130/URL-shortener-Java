@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔗 URL Shortener</h1>
+            <p class="subtitle">Shorten your long URLs quickly and easily</p>
+        </header>
+
+        <main>
+            <div class="shorten-section">
+                <form id="urlForm">
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="urlInput" 
+                            placeholder="Enter your long URL here (e.g., https://example.com)"
+                            required
+                        >
+                        <button type="submit" id="shortenBtn">Shorten</button>
+                    </div>
+                </form>
+
+                <div id="result" class="result hidden">
+                    <div class="result-content">
+                        <label>Shortened URL:</label>
+                        <div class="short-url-container">
+                            <input type="text" id="shortUrl" readonly>
+                            <button id="copyBtn" class="copy-btn">Copy</button>
+                        </div>
+                        <div id="successMessage" class="success-message hidden">Copied to clipboard!</div>
+                    </div>
+                </div>
+
+                <div id="error" class="error hidden"></div>
+            </div>
+
+            <div class="urls-section">
+                <h2>Recent URLs</h2>
+                <button id="refreshBtn" class="refresh-btn">Refresh</button>
+                <div id="urlsList" class="urls-list">
+                    <p class="loading">Loading...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
