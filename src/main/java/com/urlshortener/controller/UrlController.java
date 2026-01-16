@@ -28,8 +28,8 @@ public class UrlController {
             UrlEntity urlEntity = urlService.shortenUrl(request.getUrl());
             String baseUrl = getBaseUrl(httpRequest);
             String shortUrl = baseUrl + "/api/" + urlEntity.getShortCode();
-
-            UrlResponse response = new UrlResponse(
+            
+            UrlResponse response = new UrlResponse( 
                     urlEntity.getOriginalUrl(),
                     shortUrl,
                     urlEntity.getShortCode(),
@@ -83,8 +83,7 @@ public class UrlController {
         if ((serverPort != 80) && (serverPort != 443)) {
             url.append(":").append(serverPort);
         }
-
-        url.append(contextPath);
+        url.append(contextPath);                                                                                                                                                                                                                                                    
 
         return url.toString();
     }

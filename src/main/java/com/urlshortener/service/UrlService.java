@@ -78,7 +78,7 @@ public class UrlService {
         }
         try {
             // Add protocol if missing
-            if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            if (!url.startsWith("http://")) {
                 url = "https://" + url;
             }
             new java.net.URL(url).toURI();
